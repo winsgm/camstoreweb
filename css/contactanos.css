@@ -1,0 +1,19 @@
+﻿@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
+
+.iconos-contacto {
+    margin: 0 10px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0);
+    color: var(--color);
+    font-size: 1.5em;
+}
+.font-custom {
+    font-family: "Courier New", sans-serif;
+}
