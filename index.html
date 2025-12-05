@@ -1,24 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CamStore</title>
-    <link rel="stylesheet" href="css/index.css"> 
-    <link rel="stylesheet" href="css/nav.css"> 
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CamStore - Inicio</title>
+    
+    <!-- Bootstrap desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tus CSS de tu carpeta css/ -->
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/_Layout.css">
+    <link rel="stylesheet" href="css/contactanos.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/carrito.css">
 </head>
 <body>
+    <!-- El navbar se agregará AUTOMÁTICAMENTE aquí por nav-static.js -->
+    <!-- No pongas nada aquí, el JS lo hará -->
+    
+    <!-- Tu contenido EXACTO como en ASP.NET -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            <h1 class="text-center text-white font-custom" style="font-size: 50px;">CamStore</h1>
+            <p class="text-center text-white font-custom" style="font-size: 25px;">Captura cada momento con la mejor calidad</p>
+            
+            <nav class="nav-carrusel">
+                <div class="carrusel-nav">
+                    <div class="carrusel">
+                        <div class="carrusel-inner">
+                            <img src="https://sony.scene7.com/is/image/sonyglobalsolutions/feature_05_desktop-1?$toutDesktop$" alt="imagen" />
+                            <img src="https://sony.scene7.com/is/image/sonyglobalsolutions/feature_03_desktop-1?$toutDesktop$" alt="Imagen 1" />
+                            <img src="https://sony.scene7.com/is/image/sonyglobalsolutions/feature_01_desktop-1?$toutDesktop$" alt="Imagen 2" />
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </main>
+    </div>
 
-    <!-- Contenedor donde se cargará el navbar -->
-    <div id="nav-container"></div>
+    <!-- Scripts (IGUAL que en tu Layout de ASP.NET pero adaptados) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Tu JS del navbar estático -->
+    <script src="js/nav-static.js"></script>
+    
+    <!-- Tus otros JS -->
+    <script src="js/site.js"></script>
+    <script src="js/carrito.js"></script>
+    
+    <!-- Script para el carrusel (si lo quieres separado) -->
+    <script>
+        // Tu código del carrusel original
+        $(document).ready(function () {
+            let currentIndex = 0;
+            const images = $('.carrusel-nav .carrusel-inner img');
+            const totalImages = images.length;
 
-    <!-- Contenido de la página -->
-    <h1 class="text-center text-white font-custom" style="font-size: 50px;">CamStore</h1>
-    <p class="text-center text-white font-custom" style="font-size: 25px;">Captura cada momento con la mejor calidad</p>
+            function showNextImage() {
+                currentIndex = (currentIndex + 1) % totalImages; 
+                const offset = -currentIndex * 100; 
+                $('.carrusel-nav .carrusel-inner').css('transform', 'translateX(' + offset + '%)');
+            }
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/index.js"></script>
+            setInterval(showNextImage, 3000); 
+        });
+    </script>
 </body>
 </html>
 
