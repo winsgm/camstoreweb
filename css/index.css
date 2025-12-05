@@ -7,25 +7,4 @@ body {
     text-align: center;
 }
 
-.font-custom {
-    font-family: "Georgia", serif;
-    font-weight: bold;
-}
-
-.nav-carrusel {
-    margin-top: 20px;
-    overflow: hidden;
-    width: 100%;
-}
-
-.carrusel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carrusel-inner img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-}
 
